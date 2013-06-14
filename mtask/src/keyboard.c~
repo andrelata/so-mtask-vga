@@ -220,7 +220,7 @@ static char numpad_map[] = { 'H', 'Y', 'A', 'B', 'D', 'C', 'V', 'U', 'G', 'S', '
 // Proceso de entrada de teclas
 #define INPUTPRIO	10000		// Alta prioridad, para que funcione como "bottom half"
 
-static MsgQueue_t *scan_mq;/*, *key_mq*/;
+static MsgQueue_t *scan_mq/*, *key_mq*/;
 
 static void 
 kbdint(unsigned irq)
