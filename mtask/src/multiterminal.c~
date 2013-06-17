@@ -8,12 +8,12 @@ mt_mtty_init(void){
 	for(i=0; i < MTTYCANT; i++)
 	{
      		multiterminal.ttyActual = i;
-		multiterminal.terminales[i].cur_attr = DEFATTR;
-		multiterminal.terminales[i].cursor_on = true;
-		multiterminal.terminales[i].vidmem = (row *) VIDMEM;
 		mt_cons_clear();
 		mt_cons_cursor(true);
         	multiterminal.terminales[i].key_mq = CreateMsgQueue("Input key", KBDBUFSIZE, 1, true, false);
+		multiterminal.terminales[i].cur_attr = DEFATTR;
+		multiterminal.terminales[i].cursor_on = true;
+		multiterminal.terminales[i].vidmem = (row *) VIDMEM;
 	}
 	
 }

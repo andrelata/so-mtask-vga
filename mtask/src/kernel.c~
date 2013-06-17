@@ -905,8 +905,8 @@ mt_main(void)
 	mt_mtty_init();
 
 	// Borrar la pantalla
-	//mt_cons_clear();
-	//mt_cons_cursor(true);
+	mt_cons_clear();
+	mt_cons_cursor(true);
 
 	// Inicializar driver de teclado
 	mt_kbd_init();
