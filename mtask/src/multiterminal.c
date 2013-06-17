@@ -15,6 +15,7 @@ mt_mtty_init(void){
 		mt_cons_cursor(true);
         	multiterminal.terminales[i].key_mq = CreateMsgQueue("Input key", KBDBUFSIZE, 1, true, false);
 	}
+	multiterminal.ttyActual = 0;
 	
 }
 
@@ -56,6 +57,11 @@ incCur_y(){
 }
 
 void
+incCur_x(){
+	multiterminal.terminales[multiterminal.ttyActual].cur_x++;
+}
+
+void
 decCur_y(){
 	multiterminal.terminales[multiterminal.ttyActual].cur_y--;
 }
@@ -71,7 +77,7 @@ setCursor_On(bool on){
 }
 
 void
-setCur_attr(unsigned char attr){
+setCur_attr(unsigned attr){
 	multiterminal.terminales[multiterminal.ttyActual].cur_attr = attr;
 }
 
