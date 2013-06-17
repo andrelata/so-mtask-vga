@@ -153,8 +153,4 @@ Task_t *mt_getfirst_time(void);
 
 void mt_setup_math(void);
 
-/* multiterminal.c */
-
-void mt_mtty_init(void);
-
 #endif

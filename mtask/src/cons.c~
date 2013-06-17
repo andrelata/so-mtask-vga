@@ -281,7 +281,6 @@ mt_cons_raw(bool on)
 	bool raw = getRaw();
 
 	bool prev = raw;
-	//raw = on;
-	setRaw(on);
+	raw = on;
 	return prev;
 }

@@ -97,7 +97,7 @@ getRaw(){
 
 void
 setRaw(bool newValue){
-	multiterminal.terminales[multiterminal.ttyActual].raw = newValue;
+	return multiterminal.terminales[multiterminal.ttyActual].raw = newValue;
 }
 
 void

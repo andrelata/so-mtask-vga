@@ -901,9 +901,6 @@ mt_main(void)
 	// Habilitar interrupciones
 	mt_sti();
 
-	// Inicializar las tty
-	mt_mtty_init();
-
 	// Borrar la pantalla
 	mt_cons_clear();
 	mt_cons_cursor(true);

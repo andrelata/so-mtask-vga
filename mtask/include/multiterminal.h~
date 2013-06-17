@@ -52,6 +52,7 @@ static mtty_t multiterminal;
 	
  } multiterminal = {0,{}};*/
 
+void mt_mtty_init(void);
 row * getVidmem();
 void setCur_x(unsigned x);
 unsigned getCur_x();

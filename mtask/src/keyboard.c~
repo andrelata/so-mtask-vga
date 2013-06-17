@@ -216,6 +216,7 @@ static char numpad_map[] = { 'H', 'Y', 'A', 'B', 'D', 'C', 'V', 'U', 'G', 'S', '
 #define KBDCTL		0x64
 #define KBDOBF		2
 #define KBDINT		1
+#define KBDBUFSIZE	32
 
 // Proceso de entrada de teclas
 #define INPUTPRIO	10000		// Alta prioridad, para que funcione como "bottom half"
