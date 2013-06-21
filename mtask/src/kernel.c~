@@ -259,7 +259,7 @@ CurrentTty - retorna la tty de la tarea actual.
 unsigned
 CurrentTty(void)
 {
-	return mt_curr_task->tty;
+	return mt_curr_task.tty;
 }
 
 

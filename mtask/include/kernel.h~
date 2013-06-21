@@ -120,8 +120,6 @@ void mt_cons_nl(void);
 void mt_cons_tab(void);
 void mt_cons_bs(void);
 
-void mt_cons_changeTty(unsigned tty);
-
 /* keyboard.c */ 
 
 void mt_kbd_init(void);

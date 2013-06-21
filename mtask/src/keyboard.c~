@@ -399,7 +399,7 @@ input_task(void *arg)
 		else
 		{
 			if(AF1 <= ch && ch <= AF4){
-				mt_cons_changeTty(ch%4);
+				mt_cons_changeTty(ch%2);
 			}
 			// Aquí deberían procesarse teclas especiales de procesamiento
 			// inmediato como Fn, Alt-Fn, etc.

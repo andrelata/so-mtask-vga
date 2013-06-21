@@ -30,7 +30,7 @@ mt_mtty_init(void){
 		ctrcA=0x3D4;
 		ctrcD=0x3D5;
 	}
-	mt_cons_changeTty(0);
+	changeTty(3);
 }
 
 void

@@ -114,7 +114,6 @@ void 				Free(void *mem);
 
 void				SetData(Task_t *task, void *data);
 Task_t *			SetTty(Task_t *task, unsigned ttyN);
-unsigned			CurrentTty(void);
 void				SetSwitcher(Switcher_t switcher);
 
 void				Panic(char *msg);

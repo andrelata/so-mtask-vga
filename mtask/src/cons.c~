@@ -69,7 +69,6 @@ put(unsigned char ch)
 void
 mt_cons_changeTty(unsigned tty){
 	changeTty(tty);
-	setcursor();
 }
 
 void
