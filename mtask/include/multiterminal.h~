@@ -8,7 +8,7 @@
 #define NUMCOLS 80
 #define TABSIZE 8
 #define OFFSET_LIMIT 26
-#define TTY_MEM 0x1000
+#define TTY_MEM 4000
 
 #define DEFATTR ((BLACK << 12) | (LIGHTGRAY << 8))
 

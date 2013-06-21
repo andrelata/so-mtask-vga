@@ -30,8 +30,7 @@ mt_mtty_init(void){
 		ctrcA=0x3D4;
 		ctrcD=0x3D5;
 	}
-	
-unsigned off = (TTY_MEM/2)*multiterminal.ttyActual;	
+	unsigned off = (TTY_MEM/2)*multiterminal.ttyActual;	
 
 	/* Start Address Low Register*/
 	outb(ctrcA,0xD);
