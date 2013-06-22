@@ -84,7 +84,6 @@ void putIntottyKbd(void *c);
 bool getFromttyKbd(void *c);
 bool getFromttyKbdTimed(void *c, unsigned timeout);
 void setcursor(void);
-void correctOffset();
 
 
 #endif

@@ -42,7 +42,6 @@ put(unsigned char ch)
 			incCur_y();
 	}
 	setcursor();
-	correctOffset();
 }
 
 /* Interfaz pública */

@@ -184,7 +184,7 @@ LOAD obj/multiterminal.o
  *(.iplt)
  .iplt          0x0000000000000000        0x0 obj/kstart.o
 
-.text           0x0000000000100100     0x912f
+.text           0x0000000000100100     0x9643
  *(.text.unlikely .text.*_unlikely)
  *(.text.exit .text.exit.*)
  *(.text.startup .text.startup.*)
@@ -280,303 +280,308 @@ LOAD obj/multiterminal.o
  .text          0x00000000001031d8      0x204 obj/malloc.o
                 0x00000000001031d8                free
                 0x00000000001032fc                malloc
- .text          0x00000000001033dc      0x5b7 obj/cons.o
-                0x0000000000103577                mt_cons_changeTty
-                0x000000000010358f                mt_cons_clear
-                0x00000000001035da                mt_cons_clreol
-                0x0000000000103648                mt_cons_clreom
-                0x00000000001036a7                mt_cons_nrows
-                0x00000000001036b1                mt_cons_ncols
-                0x00000000001036bb                mt_cons_nscrolls
-                0x00000000001036c8                mt_cons_getxy
-                0x00000000001036f0                mt_cons_gotoxy
-                0x000000000010371f                mt_cons_setattr
-                0x0000000000103747                mt_cons_getattr
-                0x0000000000103777                mt_cons_cursor
-                0x0000000000103812                mt_cons_putc
-                0x000000000010388c                mt_cons_puts
-                0x00000000001038b5                mt_cons_cr
-                0x00000000001038ce                mt_cons_nl
-                0x00000000001038f5                mt_cons_tab
-                0x0000000000103934                mt_cons_bs
-                0x0000000000103975                mt_cons_raw
- *fill*         0x0000000000103993        0xd 
- .text          0x00000000001039a0       0x18 obj/io.o
-                0x00000000001039a0                inb
-                0x00000000001039ab                outb
- .text          0x00000000001039b8       0x69 obj/timer.o
-                0x00000000001039b8                mt_setup_timer
- *fill*         0x0000000000103a21        0x3 
- .text          0x0000000000103a24      0x3f9 obj/queue.o
-                0x0000000000103a24                mt_enqueue
-                0x0000000000103b0a                mt_dequeue
-                0x0000000000103b92                mt_peeklast
-                0x0000000000103b9d                mt_getlast
-                0x0000000000103c0d                mt_enqueue_time
-                0x0000000000103d0b                mt_dequeue_time
-                0x0000000000103da7                mt_peekfirst_time
-                0x0000000000103db1                mt_getfirst_time
- *fill*         0x0000000000103e1d        0x3 
- .text          0x0000000000103e20       0x95 obj/math.o
-                0x0000000000103e99                mt_setup_math
- *fill*         0x0000000000103eb5        0x3 
- .text          0x0000000000103eb8      0x147 obj/sem.o
-                0x0000000000103eb8                CreateSem
-                0x0000000000103eeb                DeleteSem
-                0x0000000000103f0c                WaitSem
-                0x0000000000103f27                WaitSemCond
-                0x0000000000103f42                WaitSemTimed
-                0x0000000000103f94                SignalSem
-                0x0000000000103fc5                ValueSem
-                0x0000000000103fcf                FlushSem
- *fill*         0x0000000000103fff        0x1 
- .text          0x0000000000104000      0x140 obj/mutex.o
-                0x0000000000104000                CreateMutex
-                0x0000000000104033                DeleteMutex
-                0x0000000000104054                EnterMutex
-                0x000000000010406f                EnterMutexCond
-                0x000000000010408a                EnterMutexTimed
-                0x00000000001040ef                LeaveMutex
- .text          0x0000000000104140      0x25a obj/monitor.o
-                0x0000000000104140                CreateMonitor
-                0x0000000000104173                DeleteMonitor
-                0x0000000000104194                EnterMonitor
-                0x00000000001041af                EnterMonitorCond
-                0x00000000001041ca                EnterMonitorTimed
-                0x000000000010421c                LeaveMonitor
-                0x0000000000104255                CreateCondition
-                0x0000000000104288                DeleteCondition
-                0x00000000001042a9                WaitCondition
-                0x00000000001042c4                WaitConditionTimed
-                0x000000000010432e                SignalCondition
-                0x0000000000104360                BroadcastCondition
- *fill*         0x000000000010439a        0x2 
- .text          0x000000000010439c      0x3ee obj/pipe.o
-                0x000000000010439c                CreatePipe
-                0x0000000000104483                DeletePipe
-                0x00000000001044cd                GetPipe
-                0x00000000001044f6                GetPipeCond
-                0x000000000010451f                GetPipeTimed
-                0x0000000000104622                PutPipe
-                0x000000000010464b                PutPipeCond
-                0x0000000000104674                PutPipeTimed
-                0x000000000010477f                AvailPipe
- *fill*         0x000000000010478a        0x2 
- .text          0x000000000010478c      0x415 obj/msgqueue.o
-                0x00000000001048a0                CreateMsgQueue
-                0x00000000001049ca                DeleteMsgQueue
-                0x0000000000104a35                GetMsgQueue
-                0x0000000000104a57                GetMsgQueueCond
-                0x0000000000104a79                GetMsgQueueTimed
-                0x0000000000104ade                PutMsgQueue
-                0x0000000000104b00                PutMsgQueueCond
-                0x0000000000104b22                PutMsgQueueTimed
-                0x0000000000104b8b                AvailMsgQueue
- *fill*         0x0000000000104ba1        0x3 
- .text          0x0000000000104ba4       0xb0 obj/rand.o
-                0x0000000000104c33                rand
-                0x0000000000104c47                srand
- .text          0x0000000000104c54      0x5bf obj/filo.o
-                0x0000000000105055                phil_main
- *fill*         0x0000000000105213        0x1 
- .text          0x0000000000105214      0x547 obj/sfilo.o
-                0x00000000001055a7                simple_phil_main
- *fill*         0x000000000010575b        0x1 
- .text          0x000000000010575c      0x61b obj/xfilo.o
-                0x0000000000105bab                extra_phil_main
- *fill*         0x0000000000105d77        0x1 
- .text          0x0000000000105d78      0x53b obj/keyboard.o
-                0x000000000010615e                mt_kbd_getch_timed
-                0x0000000000106181                mt_kbd_getch
-                0x000000000010619d                mt_kbd_init
-                0x000000000010623e                mt_kbd_getlayout
-                0x0000000000106248                mt_kbd_setlayout
-                0x00000000001062a9                mt_kbd_layouts
- *fill*         0x00000000001062b3        0x1 
- .text          0x00000000001062b4       0xfd obj/printk.o
-                0x00000000001062b4                vprintk
-                0x000000000010632b                printk
-                0x0000000000106351                cprintk
- *fill*         0x00000000001063b1        0x3 
- .text          0x00000000001063b4      0x135 obj/getline.o
-                0x00000000001063b4                mt_getline
- *fill*         0x00000000001064e9        0x3 
- .text          0x00000000001064ec      0x27c obj/shell.o
-                0x00000000001064ec                shell_main
- .text          0x0000000000106768      0x34f obj/split.o
-                0x00000000001067bd                setfs
-                0x00000000001067e5                split
-                0x0000000000106993                separate
- *fill*         0x0000000000106ab7        0x1 
- .text          0x0000000000106ab8       0xee obj/setkb.o
-                0x0000000000106ab8                setkb_main
- *fill*         0x0000000000106ba6        0x2 
- .text          0x0000000000106ba8      0x928 obj/camino.o
-                0x0000000000107330                camino_main
- .text          0x00000000001074d0      0xade obj/camino_ns.o
-                0x0000000000107e32                camino_ns_main
- *fill*         0x0000000000107fae        0x2 
- .text          0x0000000000107fb0       0xa6 obj/atoi.o
-                0x0000000000107fb0                atoi
- *fill*         0x0000000000108056        0x2 
- .text          0x0000000000108058      0x4d5 obj/prodcons.o
-                0x00000000001082e5                prodcons_main
- *fill*         0x000000000010852d        0x3 
- .text          0x0000000000108530      0x5ab obj/afilo.o
-                0x0000000000108952                atomic_phil_main
- *fill*         0x0000000000108adb        0x1 
- .text          0x0000000000108adc       0xf5 obj/divz.o
-                0x0000000000108b1a                divz_main
- *fill*         0x0000000000108bd1        0x3 
- .text          0x0000000000108bd4      0x65b obj/multiterminal.o
-                0x0000000000108bd4                mt_mtty_init
-                0x0000000000108d38                changeTty
-                0x0000000000108db8                getVidmem
-                0x0000000000108dd9                getOffset
-                0x0000000000108dfa                setCur_x
-                0x0000000000108e1f                getRealCur_x
-                0x0000000000108e6f                getCur_x
-                0x0000000000108e90                decCur_x
-                0x0000000000108ec6                setCur_y
-                0x0000000000108eeb                getRealCur_y
-                0x0000000000108f4a                getCur_y
-                0x0000000000108f6b                incCur_y
-                0x0000000000108fa1                incCur_x
-                0x0000000000108fd7                decCur_y
-                0x000000000010900d                getCursor_On
-                0x000000000010902e                setCursor_On
-                0x0000000000109053                setCur_attr
-                0x0000000000109078                getCur_attr
-                0x0000000000109099                getScrolls
-                0x00000000001090ba                incScrolls
-                0x00000000001090f0                getRaw
-                0x0000000000109111                setRaw
-                0x0000000000109136                putty
-                0x0000000000109199                putIntottyKbd
-                0x00000000001091c8                getFromttyKbd
-                0x00000000001091f8                getFromttyKbdTimed
+ .text          0x00000000001033dc      0x47e obj/cons.o
+                0x0000000000103475                mt_cons_changeTty
+                0x000000000010348d                mt_cons_clear
+                0x000000000010349a                mt_cons_clreol
+                0x0000000000103508                mt_cons_clreom
+                0x0000000000103567                mt_cons_nrows
+                0x0000000000103571                mt_cons_ncols
+                0x000000000010357b                mt_cons_nscrolls
+                0x0000000000103588                mt_cons_getxy
+                0x00000000001035b0                mt_cons_gotoxy
+                0x00000000001035df                mt_cons_setattr
+                0x0000000000103607                mt_cons_getattr
+                0x0000000000103637                mt_cons_cursor
+                0x00000000001036d2                mt_cons_putc
+                0x000000000010374c                mt_cons_puts
+                0x0000000000103775                mt_cons_cr
+                0x000000000010378e                mt_cons_nl
+                0x00000000001037bc                mt_cons_tab
+                0x00000000001037fb                mt_cons_bs
+                0x000000000010383c                mt_cons_raw
+ *fill*         0x000000000010385a        0x6 
+ .text          0x0000000000103860       0x18 obj/io.o
+                0x0000000000103860                inb
+                0x000000000010386b                outb
+ .text          0x0000000000103878       0x69 obj/timer.o
+                0x0000000000103878                mt_setup_timer
+ *fill*         0x00000000001038e1        0x3 
+ .text          0x00000000001038e4      0x3f9 obj/queue.o
+                0x00000000001038e4                mt_enqueue
+                0x00000000001039ca                mt_dequeue
+                0x0000000000103a52                mt_peeklast
+                0x0000000000103a5d                mt_getlast
+                0x0000000000103acd                mt_enqueue_time
+                0x0000000000103bcb                mt_dequeue_time
+                0x0000000000103c67                mt_peekfirst_time
+                0x0000000000103c71                mt_getfirst_time
+ *fill*         0x0000000000103cdd        0x3 
+ .text          0x0000000000103ce0       0x95 obj/math.o
+                0x0000000000103d59                mt_setup_math
+ *fill*         0x0000000000103d75        0x3 
+ .text          0x0000000000103d78      0x147 obj/sem.o
+                0x0000000000103d78                CreateSem
+                0x0000000000103dab                DeleteSem
+                0x0000000000103dcc                WaitSem
+                0x0000000000103de7                WaitSemCond
+                0x0000000000103e02                WaitSemTimed
+                0x0000000000103e54                SignalSem
+                0x0000000000103e85                ValueSem
+                0x0000000000103e8f                FlushSem
+ *fill*         0x0000000000103ebf        0x1 
+ .text          0x0000000000103ec0      0x140 obj/mutex.o
+                0x0000000000103ec0                CreateMutex
+                0x0000000000103ef3                DeleteMutex
+                0x0000000000103f14                EnterMutex
+                0x0000000000103f2f                EnterMutexCond
+                0x0000000000103f4a                EnterMutexTimed
+                0x0000000000103faf                LeaveMutex
+ .text          0x0000000000104000      0x25a obj/monitor.o
+                0x0000000000104000                CreateMonitor
+                0x0000000000104033                DeleteMonitor
+                0x0000000000104054                EnterMonitor
+                0x000000000010406f                EnterMonitorCond
+                0x000000000010408a                EnterMonitorTimed
+                0x00000000001040dc                LeaveMonitor
+                0x0000000000104115                CreateCondition
+                0x0000000000104148                DeleteCondition
+                0x0000000000104169                WaitCondition
+                0x0000000000104184                WaitConditionTimed
+                0x00000000001041ee                SignalCondition
+                0x0000000000104220                BroadcastCondition
+ *fill*         0x000000000010425a        0x2 
+ .text          0x000000000010425c      0x3ee obj/pipe.o
+                0x000000000010425c                CreatePipe
+                0x0000000000104343                DeletePipe
+                0x000000000010438d                GetPipe
+                0x00000000001043b6                GetPipeCond
+                0x00000000001043df                GetPipeTimed
+                0x00000000001044e2                PutPipe
+                0x000000000010450b                PutPipeCond
+                0x0000000000104534                PutPipeTimed
+                0x000000000010463f                AvailPipe
+ *fill*         0x000000000010464a        0x2 
+ .text          0x000000000010464c      0x415 obj/msgqueue.o
+                0x0000000000104760                CreateMsgQueue
+                0x000000000010488a                DeleteMsgQueue
+                0x00000000001048f5                GetMsgQueue
+                0x0000000000104917                GetMsgQueueCond
+                0x0000000000104939                GetMsgQueueTimed
+                0x000000000010499e                PutMsgQueue
+                0x00000000001049c0                PutMsgQueueCond
+                0x00000000001049e2                PutMsgQueueTimed
+                0x0000000000104a4b                AvailMsgQueue
+ *fill*         0x0000000000104a61        0x3 
+ .text          0x0000000000104a64       0xb0 obj/rand.o
+                0x0000000000104af3                rand
+                0x0000000000104b07                srand
+ .text          0x0000000000104b14      0x5bf obj/filo.o
+                0x0000000000104f15                phil_main
+ *fill*         0x00000000001050d3        0x1 
+ .text          0x00000000001050d4      0x547 obj/sfilo.o
+                0x0000000000105467                simple_phil_main
+ *fill*         0x000000000010561b        0x1 
+ .text          0x000000000010561c      0x61b obj/xfilo.o
+                0x0000000000105a6b                extra_phil_main
+ *fill*         0x0000000000105c37        0x1 
+ .text          0x0000000000105c38      0x55c obj/keyboard.o
+                0x000000000010603f                mt_kbd_getch_timed
+                0x0000000000106062                mt_kbd_getch
+                0x000000000010607e                mt_kbd_init
+                0x000000000010611f                mt_kbd_getlayout
+                0x0000000000106129                mt_kbd_setlayout
+                0x000000000010618a                mt_kbd_layouts
+ .text          0x0000000000106194       0xfd obj/printk.o
+                0x0000000000106194                vprintk
+                0x000000000010620b                printk
+                0x0000000000106231                cprintk
+ *fill*         0x0000000000106291        0x3 
+ .text          0x0000000000106294      0x135 obj/getline.o
+                0x0000000000106294                mt_getline
+ *fill*         0x00000000001063c9        0x3 
+ .text          0x00000000001063cc      0x27c obj/shell.o
+                0x00000000001063cc                shell_main
+ .text          0x0000000000106648      0x34f obj/split.o
+                0x000000000010669d                setfs
+                0x00000000001066c5                split
+                0x0000000000106873                separate
+ *fill*         0x0000000000106997        0x1 
+ .text          0x0000000000106998       0xee obj/setkb.o
+                0x0000000000106998                setkb_main
+ *fill*         0x0000000000106a86        0x2 
+ .text          0x0000000000106a88      0x928 obj/camino.o
+                0x0000000000107210                camino_main
+ .text          0x00000000001073b0      0xade obj/camino_ns.o
+                0x0000000000107d12                camino_ns_main
+ *fill*         0x0000000000107e8e        0x2 
+ .text          0x0000000000107e90       0xa6 obj/atoi.o
+                0x0000000000107e90                atoi
+ *fill*         0x0000000000107f36        0x2 
+ .text          0x0000000000107f38      0x4d5 obj/prodcons.o
+                0x00000000001081c5                prodcons_main
+ *fill*         0x000000000010840d        0x3 
+ .text          0x0000000000108410      0x5ab obj/afilo.o
+                0x0000000000108832                atomic_phil_main
+ *fill*         0x00000000001089bb        0x1 
+ .text          0x00000000001089bc       0xf5 obj/divz.o
+                0x00000000001089fa                divz_main
+ *fill*         0x0000000000108ab1        0x3 
+ .text          0x0000000000108ab4      0xc8f obj/multiterminal.o
+                0x0000000000108ab4                mt_mtty_init
+                0x0000000000108c75                changeTty
+                0x0000000000108ccc                getVidmem
+                0x0000000000108ced                getOffset
+                0x0000000000108d0e                setCur_x
+                0x0000000000108d33                getRealCur_x
+                0x0000000000108d83                getCur_x
+                0x0000000000108da4                decCur_x
+                0x0000000000108dda                setCur_y
+                0x0000000000108dff                getRealCur_y
+                0x0000000000108e43                getCur_y
+                0x0000000000108e64                incCur_y
+                0x0000000000108e9a                incCur_x
+                0x0000000000108ed0                decCur_y
+                0x0000000000108f06                getCursor_On
+                0x0000000000108f27                setCursor_On
+                0x0000000000108f4c                setCur_attr
+                0x0000000000108f71                getCur_attr
+                0x0000000000108f92                getScrolls
+                0x0000000000108fb3                incScrolls
+                0x0000000000108fe9                getRaw
+                0x000000000010900a                setRaw
+                0x000000000010902f                putty
+                0x0000000000109185                mt_mtty_scroll
+                0x000000000010928a                mt_mtty_scrollUp
+                0x0000000000109317                mt_mtty_scrollDown
+                0x00000000001093a5                mt_mtty_clear
+                0x0000000000109480                setcursor
+                0x00000000001095a4                correctOffset
+                0x00000000001096ad                putIntottyKbd
+                0x00000000001096dc                getFromttyKbd
+                0x000000000010970c                getFromttyKbdTimed
  *(.gnu.warning)
 
 .fini
  *(SORT(.fini))
-                0x000000000010922f                PROVIDE (__etext, .)
-                0x000000000010922f                PROVIDE (_etext, .)
-                0x000000000010922f                PROVIDE (etext, .)
+                0x0000000000109743                PROVIDE (__etext, .)
+                0x0000000000109743                PROVIDE (_etext, .)
+                0x0000000000109743                PROVIDE (etext, .)
 
-.rodata         0x0000000000109230      0x985
+.rodata         0x0000000000109748      0x985
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000000000109230       0xf0 obj/kernel.o
- .rodata        0x0000000000109320       0x55 obj/irq.o
- *fill*         0x0000000000109375        0x3 
- .rodata        0x0000000000109378      0x188 obj/sprintf.o
- .rodata        0x0000000000109500       0x29 obj/mutex.o
- *fill*         0x0000000000109529        0x3 
- .rodata        0x000000000010952c       0xff obj/monitor.o
- .rodata        0x000000000010962b        0xe obj/pipe.o
- *fill*         0x0000000000109639        0x3 
- .rodata        0x000000000010963c       0x2f obj/msgqueue.o
- *fill*         0x000000000010966b        0x1 
- .rodata        0x000000000010966c       0x4e obj/filo.o
- *fill*         0x00000000001096ba        0x2 
- .rodata        0x00000000001096bc       0x4e obj/sfilo.o
- *fill*         0x000000000010970a        0x2 
- .rodata        0x000000000010970c       0x4e obj/xfilo.o
- .rodata        0x000000000010975a       0x24 obj/keyboard.o
- .rodata        0x000000000010977e        0xf obj/getline.o
- .rodata        0x000000000010978d       0xbb obj/shell.o
- .rodata        0x0000000000109848        0x1 obj/split.o
- *fill*         0x0000000000109849        0x3 
- .rodata        0x000000000010984c       0x62 obj/setkb.o
- *fill*         0x00000000001098ae        0x2 
- .rodata        0x00000000001098b0       0x88 obj/camino.o
- .rodata        0x0000000000109938       0xa0 obj/camino_ns.o
- .rodata        0x00000000001099d8      0x116 obj/prodcons.o
- *fill*         0x0000000000109aee        0x2 
- .rodata        0x0000000000109af0       0x4e obj/afilo.o
- *fill*         0x0000000000109b3e        0x2 
- .rodata        0x0000000000109b40       0x6b obj/divz.o
- .rodata        0x0000000000109bab        0xa obj/multiterminal.o
+ .rodata        0x0000000000109748       0xf0 obj/kernel.o
+ .rodata        0x0000000000109838       0x55 obj/irq.o
+ *fill*         0x000000000010988d        0x3 
+ .rodata        0x0000000000109890      0x188 obj/sprintf.o
+ .rodata        0x0000000000109a18       0x29 obj/mutex.o
+ *fill*         0x0000000000109a41        0x3 
+ .rodata        0x0000000000109a44       0xff obj/monitor.o
+ .rodata        0x0000000000109b43        0xe obj/pipe.o
+ *fill*         0x0000000000109b51        0x3 
+ .rodata        0x0000000000109b54       0x2f obj/msgqueue.o
+ *fill*         0x0000000000109b83        0x1 
+ .rodata        0x0000000000109b84       0x4e obj/filo.o
+ *fill*         0x0000000000109bd2        0x2 
+ .rodata        0x0000000000109bd4       0x4e obj/sfilo.o
+ *fill*         0x0000000000109c22        0x2 
+ .rodata        0x0000000000109c24       0x4e obj/xfilo.o
+ .rodata        0x0000000000109c72       0x24 obj/keyboard.o
+ .rodata        0x0000000000109c96        0xf obj/getline.o
+ .rodata        0x0000000000109ca5       0xbb obj/shell.o
+ .rodata        0x0000000000109d60        0x1 obj/split.o
+ *fill*         0x0000000000109d61        0x3 
+ .rodata        0x0000000000109d64       0x62 obj/setkb.o
+ *fill*         0x0000000000109dc6        0x2 
+ .rodata        0x0000000000109dc8       0x88 obj/camino.o
+ .rodata        0x0000000000109e50       0xa0 obj/camino_ns.o
+ .rodata        0x0000000000109ef0      0x116 obj/prodcons.o
+ *fill*         0x000000000010a006        0x2 
+ .rodata        0x000000000010a008       0x4e obj/afilo.o
+ *fill*         0x000000000010a056        0x2 
+ .rodata        0x000000000010a058       0x6b obj/divz.o
+ .rodata        0x000000000010a0c3        0xa obj/multiterminal.o
 
 .rodata1
  *(.rodata1)
 
-.eh_frame_hdr   0x0000000000109bb8      0x9c4
+.eh_frame_hdr   0x000000000010a0d0      0x9fc
  *(.eh_frame_hdr)
- .eh_frame_hdr  0x0000000000109bb8      0x9c4 obj/kernel.o
+ .eh_frame_hdr  0x000000000010a0d0      0x9fc obj/kernel.o
 
-.eh_frame       0x000000000010a57c     0x27b8
+.eh_frame       0x000000000010aacc     0x2898
  *(.eh_frame)
- .eh_frame      0x000000000010a57c      0x5cc obj/kernel.o
- .eh_frame      0x000000000010ab48       0x60 obj/gdt_idt.o
+ .eh_frame      0x000000000010aacc      0x5cc obj/kernel.o
+ .eh_frame      0x000000000010b098       0x60 obj/gdt_idt.o
                                          0x78 (tamaño antes de la relajación)
- .eh_frame      0x000000000010aba8      0x148 obj/irq.o
+ .eh_frame      0x000000000010b0f8      0x148 obj/irq.o
                                         0x160 (tamaño antes de la relajación)
- .eh_frame      0x000000000010acf0      0x264 obj/string.o
+ .eh_frame      0x000000000010b240      0x264 obj/string.o
                                         0x27c (tamaño antes de la relajación)
- .eh_frame      0x000000000010af54      0x1d8 obj/sprintf.o
+ .eh_frame      0x000000000010b4a4      0x1d8 obj/sprintf.o
                                         0x1f0 (tamaño antes de la relajación)
- .eh_frame      0x000000000010b12c       0x60 obj/malloc.o
+ .eh_frame      0x000000000010b67c       0x60 obj/malloc.o
                                          0x78 (tamaño antes de la relajación)
- .eh_frame      0x000000000010b18c      0x2c0 obj/cons.o
-                                        0x2d8 (tamaño antes de la relajación)
- .eh_frame      0x000000000010b44c       0x20 obj/timer.o
+ .eh_frame      0x000000000010b6dc      0x2a0 obj/cons.o
+                                        0x2b8 (tamaño antes de la relajación)
+ .eh_frame      0x000000000010b97c       0x20 obj/timer.o
                                          0x38 (tamaño antes de la relajación)
- .eh_frame      0x000000000010b46c      0x100 obj/queue.o
+ .eh_frame      0x000000000010b99c      0x100 obj/queue.o
                                         0x118 (tamaño antes de la relajación)
- .eh_frame      0x000000000010b56c       0x44 obj/math.o
+ .eh_frame      0x000000000010ba9c       0x44 obj/math.o
                                          0x5c (tamaño antes de la relajación)
- .eh_frame      0x000000000010b5b0      0x100 obj/sem.o
+ .eh_frame      0x000000000010bae0      0x100 obj/sem.o
                                         0x118 (tamaño antes de la relajación)
- .eh_frame      0x000000000010b6b0       0xc0 obj/mutex.o
+ .eh_frame      0x000000000010bbe0       0xc0 obj/mutex.o
                                          0xd8 (tamaño antes de la relajación)
- .eh_frame      0x000000000010b770      0x180 obj/monitor.o
+ .eh_frame      0x000000000010bca0      0x180 obj/monitor.o
                                         0x198 (tamaño antes de la relajación)
- .eh_frame      0x000000000010b8f0      0x120 obj/pipe.o
+ .eh_frame      0x000000000010be20      0x120 obj/pipe.o
                                         0x138 (tamaño antes de la relajación)
- .eh_frame      0x000000000010ba10      0x160 obj/msgqueue.o
+ .eh_frame      0x000000000010bf40      0x160 obj/msgqueue.o
                                         0x178 (tamaño antes de la relajación)
- .eh_frame      0x000000000010bb70       0x60 obj/rand.o
+ .eh_frame      0x000000000010c0a0       0x60 obj/rand.o
                                          0x78 (tamaño antes de la relajación)
- .eh_frame      0x000000000010bbd0      0x184 obj/filo.o
+ .eh_frame      0x000000000010c100      0x184 obj/filo.o
                                         0x19c (tamaño antes de la relajación)
- .eh_frame      0x000000000010bd54      0x164 obj/sfilo.o
+ .eh_frame      0x000000000010c284      0x164 obj/sfilo.o
                                         0x17c (tamaño antes de la relajación)
- .eh_frame      0x000000000010beb8      0x184 obj/xfilo.o
+ .eh_frame      0x000000000010c3e8      0x184 obj/xfilo.o
                                         0x19c (tamaño antes de la relajación)
- .eh_frame      0x000000000010c03c      0x15c obj/keyboard.o
+ .eh_frame      0x000000000010c56c      0x15c obj/keyboard.o
                                         0x174 (tamaño antes de la relajación)
- .eh_frame      0x000000000010c198       0x60 obj/printk.o
+ .eh_frame      0x000000000010c6c8       0x60 obj/printk.o
                                          0x78 (tamaño antes de la relajación)
- .eh_frame      0x000000000010c1f8       0x20 obj/getline.o
+ .eh_frame      0x000000000010c728       0x20 obj/getline.o
                                          0x38 (tamaño antes de la relajación)
- .eh_frame      0x000000000010c218       0x20 obj/shell.o
+ .eh_frame      0x000000000010c748       0x20 obj/shell.o
                                          0x38 (tamaño antes de la relajación)
- .eh_frame      0x000000000010c238       0xc0 obj/split.o
+ .eh_frame      0x000000000010c768       0xc0 obj/split.o
                                          0xd8 (tamaño antes de la relajación)
- .eh_frame      0x000000000010c2f8       0x20 obj/setkb.o
+ .eh_frame      0x000000000010c828       0x20 obj/setkb.o
                                          0x38 (tamaño antes de la relajación)
- .eh_frame      0x000000000010c318      0x1fc obj/camino.o
+ .eh_frame      0x000000000010c848      0x1fc obj/camino.o
                                         0x214 (tamaño antes de la relajación)
- .eh_frame      0x000000000010c514      0x1bc obj/camino_ns.o
+ .eh_frame      0x000000000010ca44      0x1bc obj/camino_ns.o
                                         0x1d4 (tamaño antes de la relajación)
- .eh_frame      0x000000000010c6d0       0x24 obj/atoi.o
+ .eh_frame      0x000000000010cc00       0x24 obj/atoi.o
                                          0x3c (tamaño antes de la relajación)
- .eh_frame      0x000000000010c6f4      0x114 obj/prodcons.o
+ .eh_frame      0x000000000010cc24      0x114 obj/prodcons.o
                                         0x12c (tamaño antes de la relajación)
- .eh_frame      0x000000000010c808      0x184 obj/afilo.o
+ .eh_frame      0x000000000010cd38      0x184 obj/afilo.o
                                         0x19c (tamaño antes de la relajación)
- .eh_frame      0x000000000010c98c       0x60 obj/divz.o
+ .eh_frame      0x000000000010cebc       0x60 obj/divz.o
                                          0x78 (tamaño antes de la relajación)
- .eh_frame      0x000000000010c9ec      0x348 obj/multiterminal.o
-                                        0x360 (tamaño antes de la relajación)
+ .eh_frame      0x000000000010cf1c      0x448 obj/multiterminal.o
+                                        0x460 (tamaño antes de la relajación)
 
 .gcc_except_table
  *(.gcc_except_table .gcc_except_table.*)
 
 .exception_ranges
  *(.exception_ranges .exception_ranges*)
-                0x000000000010cd34                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
-                0x000000000010e000                . = DATA_SEGMENT_ALIGN (0x1000, 0x1000)
+                0x000000000010d364                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x000000000010f000                . = DATA_SEGMENT_ALIGN (0x1000, 0x1000)
 
 .eh_frame
  *(.eh_frame)
@@ -594,24 +599,24 @@ LOAD obj/multiterminal.o
  *(.tbss .tbss.* .gnu.linkonce.tb.*)
  *(.tcommon)
 
-.preinit_array  0x000000000010e000        0x0
-                0x000000000010e000                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x000000000010f000        0x0
+                0x000000000010f000                PROVIDE (__preinit_array_start, .)
  *(.preinit_array)
-                0x000000000010e000                PROVIDE (__preinit_array_end, .)
+                0x000000000010f000                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x000000000010e000        0x0
-                0x000000000010e000                PROVIDE (__init_array_start, .)
+.init_array     0x000000000010f000        0x0
+                0x000000000010f000                PROVIDE (__init_array_start, .)
  *(SORT(.init_array.*) SORT(.ctors.*))
  *(.init_array)
  *(EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
-                0x000000000010e000                PROVIDE (__init_array_end, .)
+                0x000000000010f000                PROVIDE (__init_array_end, .)
 
-.fini_array     0x000000000010e000        0x0
-                0x000000000010e000                PROVIDE (__fini_array_start, .)
+.fini_array     0x000000000010f000        0x0
+                0x000000000010f000                PROVIDE (__fini_array_start, .)
  *(SORT(.fini_array.*) SORT(.dtors.*))
  *(.fini_array)
  *(EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
-                0x000000000010e000                PROVIDE (__fini_array_end, .)
+                0x000000000010f000                PROVIDE (__fini_array_end, .)
 
 .ctors
  *crtbegin.o(.ctors)
@@ -640,122 +645,122 @@ LOAD obj/multiterminal.o
 .got
  *(.got)
  *(.igot)
-                0x000000000010e000                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0xc)?0xc:0x0)
+                0x000000000010f000                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0xc)?0xc:0x0)
 
-.got.plt        0x000000000010e000        0x0
+.got.plt        0x000000000010f000        0x0
  *(.got.plt)
  *(.igot.plt)
  .igot.plt      0x0000000000000000        0x0 obj/kstart.o
 
-.data           0x000000000010e000      0xe90
+.data           0x000000000010f000      0xe90
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x000000000010e000        0x0 obj/kernel.o
- .data          0x000000000010e000       0x18 obj/gdt_idt.o
- .data          0x000000000010e018        0x0 obj/irq.o
- .data          0x000000000010e018        0x0 obj/string.o
- .data          0x000000000010e018        0x8 obj/sprintf.o
- .data          0x000000000010e020        0x0 obj/malloc.o
- .data          0x000000000010e020        0x0 obj/cons.o
- .data          0x000000000010e020        0x0 obj/timer.o
- .data          0x000000000010e020        0x0 obj/queue.o
- .data          0x000000000010e020        0x0 obj/math.o
- .data          0x000000000010e020        0x0 obj/sem.o
- .data          0x000000000010e020        0x0 obj/mutex.o
- .data          0x000000000010e020        0x0 obj/monitor.o
- .data          0x000000000010e020        0x0 obj/pipe.o
- .data          0x000000000010e020        0x0 obj/msgqueue.o
- .data          0x000000000010e020        0x4 obj/rand.o
- *fill*         0x000000000010e024       0x1c 
- .data          0x000000000010e040       0x50 obj/filo.o
- *fill*         0x000000000010e090       0x10 
- .data          0x000000000010e0a0       0x50 obj/sfilo.o
- *fill*         0x000000000010e0f0       0x10 
- .data          0x000000000010e100       0x50 obj/xfilo.o
- *fill*         0x000000000010e150       0x10 
- .data          0x000000000010e160      0xc20 obj/keyboard.o
-                0x000000000010e160                keymap_us_std
-                0x000000000010e760                keymap_spanish
- .data          0x000000000010ed80        0x0 obj/printk.o
- .data          0x000000000010ed80        0x0 obj/getline.o
- .data          0x000000000010ed80       0x58 obj/shell.o
- .data          0x000000000010edd8        0xc obj/split.o
- .data          0x000000000010ede4        0x0 obj/setkb.o
- .data          0x000000000010ede4        0x4 obj/camino.o
- .data          0x000000000010ede8        0x4 obj/camino_ns.o
- .data          0x000000000010edec        0x0 obj/atoi.o
- *fill*         0x000000000010edec       0x14 
- .data          0x000000000010ee00       0x40 obj/prodcons.o
- .data          0x000000000010ee40       0x50 obj/afilo.o
- .data          0x000000000010ee90        0x0 obj/divz.o
- .data          0x000000000010ee90        0x0 obj/multiterminal.o
+ .data          0x000000000010f000        0x0 obj/kernel.o
+ .data          0x000000000010f000       0x18 obj/gdt_idt.o
+ .data          0x000000000010f018        0x0 obj/irq.o
+ .data          0x000000000010f018        0x0 obj/string.o
+ .data          0x000000000010f018        0x8 obj/sprintf.o
+ .data          0x000000000010f020        0x0 obj/malloc.o
+ .data          0x000000000010f020        0x0 obj/cons.o
+ .data          0x000000000010f020        0x0 obj/timer.o
+ .data          0x000000000010f020        0x0 obj/queue.o
+ .data          0x000000000010f020        0x0 obj/math.o
+ .data          0x000000000010f020        0x0 obj/sem.o
+ .data          0x000000000010f020        0x0 obj/mutex.o
+ .data          0x000000000010f020        0x0 obj/monitor.o
+ .data          0x000000000010f020        0x0 obj/pipe.o
+ .data          0x000000000010f020        0x0 obj/msgqueue.o
+ .data          0x000000000010f020        0x4 obj/rand.o
+ *fill*         0x000000000010f024       0x1c 
+ .data          0x000000000010f040       0x50 obj/filo.o
+ *fill*         0x000000000010f090       0x10 
+ .data          0x000000000010f0a0       0x50 obj/sfilo.o
+ *fill*         0x000000000010f0f0       0x10 
+ .data          0x000000000010f100       0x50 obj/xfilo.o
+ *fill*         0x000000000010f150       0x10 
+ .data          0x000000000010f160      0xc20 obj/keyboard.o
+                0x000000000010f160                keymap_us_std
+                0x000000000010f760                keymap_spanish
+ .data          0x000000000010fd80        0x0 obj/printk.o
+ .data          0x000000000010fd80        0x0 obj/getline.o
+ .data          0x000000000010fd80       0x58 obj/shell.o
+ .data          0x000000000010fdd8        0xc obj/split.o
+ .data          0x000000000010fde4        0x0 obj/setkb.o
+ .data          0x000000000010fde4        0x4 obj/camino.o
+ .data          0x000000000010fde8        0x4 obj/camino_ns.o
+ .data          0x000000000010fdec        0x0 obj/atoi.o
+ *fill*         0x000000000010fdec       0x14 
+ .data          0x000000000010fe00       0x40 obj/prodcons.o
+ .data          0x000000000010fe40       0x50 obj/afilo.o
+ .data          0x000000000010fe90        0x0 obj/divz.o
+ .data          0x000000000010fe90        0x0 obj/multiterminal.o
 
 .data1
  *(.data1)
-                0x000000000010ee90                _edata = .
-                0x000000000010ee90                PROVIDE (edata, .)
-                0x000000000010ee90                . = .
-                0x000000000010ee90                __bss_start = .
+                0x000000000010fe90                _edata = .
+                0x000000000010fe90                PROVIDE (edata, .)
+                0x000000000010fe90                . = .
+                0x000000000010fe90                __bss_start = .
 
-.bss            0x000000000010eea0   0x8087ec
+.bss            0x000000000010fea0   0x8087ec
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x000000000010eea0     0x4000 obj/kstart.o
- .bss           0x0000000000112ea0        0x6 obj/libasm.o
- *fill*         0x0000000000112ea6        0x2 
- .bss           0x0000000000112ea8     0x4014 obj/interrupts.o
- *fill*         0x0000000000116ebc        0x4 
- .bss           0x0000000000116ec0       0x80 obj/kernel.o
- .bss           0x0000000000116f40      0x180 obj/gdt_idt.o
- .bss           0x00000000001170c0       0xc0 obj/irq.o
- .bss           0x0000000000117180        0x0 obj/string.o
- .bss           0x0000000000117180        0x0 obj/sprintf.o
- .bss           0x0000000000117180   0x800010 obj/malloc.o
- *fill*         0x0000000000917190       0x10 
- .bss           0x00000000009171a0       0xa4 obj/cons.o
- .bss           0x0000000000917244        0x0 obj/timer.o
- .bss           0x0000000000917244        0xc obj/queue.o
- .bss           0x0000000000917250        0x0 obj/math.o
- .bss           0x0000000000917250        0x0 obj/sem.o
- .bss           0x0000000000917250        0x0 obj/mutex.o
- .bss           0x0000000000917250        0x0 obj/monitor.o
- .bss           0x0000000000917250        0x0 obj/pipe.o
- .bss           0x0000000000917250        0x0 obj/msgqueue.o
- .bss           0x0000000000917250        0x0 obj/rand.o
- .bss           0x0000000000917250       0x2c obj/filo.o
- .bss           0x000000000091727c       0x1c obj/sfilo.o
- .bss           0x0000000000917298       0x40 obj/xfilo.o
- *fill*         0x00000000009172d8        0x8 
- .bss           0x00000000009172e0       0xe8 obj/keyboard.o
- .bss           0x00000000009173c8        0x0 obj/printk.o
- .bss           0x00000000009173c8        0x0 obj/getline.o
- .bss           0x00000000009173c8        0x0 obj/shell.o
- .bss           0x00000000009173c8        0x0 obj/split.o
- .bss           0x00000000009173c8        0x0 obj/setkb.o
- *fill*         0x00000000009173c8       0x18 
- .bss           0x00000000009173e0       0x8c obj/camino.o
- *fill*         0x000000000091746c       0x14 
- .bss           0x0000000000917480       0x88 obj/camino_ns.o
- .bss           0x0000000000917508        0x0 obj/atoi.o
- *fill*         0x0000000000917508       0x18 
- .bss           0x0000000000917520       0x64 obj/prodcons.o
- .bss           0x0000000000917584       0x3c obj/afilo.o
- .bss           0x00000000009175c0        0x0 obj/divz.o
- .bss           0x00000000009175c0       0xac obj/multiterminal.o
+ .bss           0x000000000010fea0     0x4000 obj/kstart.o
+ .bss           0x0000000000113ea0        0x6 obj/libasm.o
+ *fill*         0x0000000000113ea6        0x2 
+ .bss           0x0000000000113ea8     0x4014 obj/interrupts.o
+ *fill*         0x0000000000117ebc        0x4 
+ .bss           0x0000000000117ec0       0x80 obj/kernel.o
+ .bss           0x0000000000117f40      0x180 obj/gdt_idt.o
+ .bss           0x00000000001180c0       0xc0 obj/irq.o
+ .bss           0x0000000000118180        0x0 obj/string.o
+ .bss           0x0000000000118180        0x0 obj/sprintf.o
+ .bss           0x0000000000118180   0x800010 obj/malloc.o
+ *fill*         0x0000000000918190       0x10 
+ .bss           0x00000000009181a0       0xa4 obj/cons.o
+ .bss           0x0000000000918244        0x0 obj/timer.o
+ .bss           0x0000000000918244        0xc obj/queue.o
+ .bss           0x0000000000918250        0x0 obj/math.o
+ .bss           0x0000000000918250        0x0 obj/sem.o
+ .bss           0x0000000000918250        0x0 obj/mutex.o
+ .bss           0x0000000000918250        0x0 obj/monitor.o
+ .bss           0x0000000000918250        0x0 obj/pipe.o
+ .bss           0x0000000000918250        0x0 obj/msgqueue.o
+ .bss           0x0000000000918250        0x0 obj/rand.o
+ .bss           0x0000000000918250       0x2c obj/filo.o
+ .bss           0x000000000091827c       0x1c obj/sfilo.o
+ .bss           0x0000000000918298       0x40 obj/xfilo.o
+ *fill*         0x00000000009182d8        0x8 
+ .bss           0x00000000009182e0       0xe8 obj/keyboard.o
+ .bss           0x00000000009183c8        0x0 obj/printk.o
+ .bss           0x00000000009183c8        0x0 obj/getline.o
+ .bss           0x00000000009183c8        0x0 obj/shell.o
+ .bss           0x00000000009183c8        0x0 obj/split.o
+ .bss           0x00000000009183c8        0x0 obj/setkb.o
+ *fill*         0x00000000009183c8       0x18 
+ .bss           0x00000000009183e0       0x8c obj/camino.o
+ *fill*         0x000000000091846c       0x14 
+ .bss           0x0000000000918480       0x88 obj/camino_ns.o
+ .bss           0x0000000000918508        0x0 obj/atoi.o
+ *fill*         0x0000000000918508       0x18 
+ .bss           0x0000000000918520       0x64 obj/prodcons.o
+ .bss           0x0000000000918584       0x3c obj/afilo.o
+ .bss           0x00000000009185c0        0x0 obj/divz.o
+ .bss           0x00000000009185c0       0xac obj/multiterminal.o
  *(COMMON)
- *fill*         0x000000000091766c        0x4 
- COMMON         0x0000000000917670       0x18 obj/kernel.o
-                0x0000000000917670                mt_last_task
-                0x0000000000917674                mt_fpu_task
-                0x0000000000917678                mt_curr_task
-                0x0000000000917680                mt_ticks
- COMMON         0x0000000000917688        0x4 obj/irq.o
-                0x0000000000917688                mt_int_level
-                0x000000000091768c                . = ALIGN ((. != 0x0)?0x4:0x1)
-                0x000000000091768c                . = ALIGN (0x4)
-                0x000000000091768c                . = ALIGN (0x4)
-                0x000000000091768c                _end = .
-                0x000000000091768c                PROVIDE (end, .)
-                0x000000000091768c                . = DATA_SEGMENT_END (.)
+ *fill*         0x000000000091866c        0x4 
+ COMMON         0x0000000000918670       0x18 obj/kernel.o
+                0x0000000000918670                mt_last_task
+                0x0000000000918674                mt_fpu_task
+                0x0000000000918678                mt_curr_task
+                0x0000000000918680                mt_ticks
+ COMMON         0x0000000000918688        0x4 obj/irq.o
+                0x0000000000918688                mt_int_level
+                0x000000000091868c                . = ALIGN ((. != 0x0)?0x4:0x1)
+                0x000000000091868c                . = ALIGN (0x4)
+                0x000000000091868c                . = ALIGN (0x4)
+                0x000000000091868c                _end = .
+                0x000000000091868c                PROVIDE (end, .)
+                0x000000000091868c                . = DATA_SEGMENT_END (.)
 
 .stab
  *(.stab)

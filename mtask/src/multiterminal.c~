@@ -255,10 +255,6 @@ correctOffset(){
 		multiterminal.terminales[tty].offset = multiterminal.terminales[tty].cur_y;
 	else if(multiterminal.terminales[tty].cur_y > multiterminal.terminales[tty].offset + NUMROWS - 1)
 		multiterminal.terminales[tty].offset = multiterminal.terminales[tty].cur_y-NUMROWS+1;
-	if(tty==multiterminal.ttyActual){
-		unsigned off = (TTY_MEM/2)*tty + NUMCOLS*(multiterminal.terminales[tty].offset);
-		changeStartAddress(off);
-	}
 }
 
 void
