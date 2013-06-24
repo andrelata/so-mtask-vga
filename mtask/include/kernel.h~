@@ -159,5 +159,6 @@ void mt_setup_math(void);
 
 void mt_mtty_init(void);
 void mt_mtty_splitScreen(void);
+void mt_mtty_unsplitScreen(void);
 
 #endif

@@ -404,7 +404,7 @@ input_task(void *arg)
 				mt_mtty_scrollUp();
 			}else if(ch == ADOWN){
 				mt_mtty_scrollDown();
-			}else if(ch == AF5){
+			}else if(ch == CF1){
 				mt_mtty_splitScreen();
 			}
 			// Aquí deberían procesarse teclas especiales de procesamiento

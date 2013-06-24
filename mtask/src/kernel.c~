@@ -940,12 +940,11 @@ mt_main(void)
 	mt_kbd_init();
 
 	// Ejecutar primera tarea
-	char *arg[] = { "shell", NULL };
-	void *args = { 1, *arg };
-	Ready(SetTty(CreateTask(shell_main, 0, args,"shell_1", DEFAULT_PRIO),1));
-	Ready(SetTty(CreateTask(shell_main, 0, args,"shell_2", DEFAULT_PRIO),2));
-	Ready(SetTty(CreateTask(shell_main, 0, args,"shell_3", DEFAULT_PRIO),3));
-
+		char *arg[] = { "shell", NULL };
+		void *args = { 1, *arg };
+		Ready(SetTty(CreateTask(shell_main, 0, args,"shell_1", DEFAULT_PRIO),1));
+		Ready(SetTty(CreateTask(shell_main, 0, args,"shell_2", DEFAULT_PRIO),2));
+		Ready(SetTty(CreateTask(shell_main, 0, args,"shell_3", DEFAULT_PRIO),3));
 	while ( true )
 	{
 		cprintk(LIGHTCYAN, BLACK, "MTask inicializado.\n");

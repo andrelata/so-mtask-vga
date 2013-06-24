@@ -51,25 +51,25 @@ mt_mtty_splitScreen(){
 		outb(ctrcA,0x18);
 		if(inb(ctrcD) == 0x0F){
 			outb(ctrcD,0xFF);
-			outb(ctrcA,0x07);
-			unsigned d = inb(ctrcD);
-			d = d | 0x10;
-			outb(ctrcD,d);
 			outb(ctrcA,0x09);
-			d = inb(ctrcD);
+			unsigned d = inb(ctrcD);
 			d = d | 0x40;
+			outb(ctrcD,d);
+			outb(ctrcA,0x07);
+			d = inb(ctrcD);
+			d = d | 0x10;
 			outb(ctrcD,d);
 			printk("split-screen mode off\n");
 		}else{
 			outb(ctrcD,0x0F);
 			outb(ctrcA,0x07);
-			unsigned d = inb(ctrcD);
+			d = inb(ctrcD);
 			printk("d: %x\n", d);
 			d = d & 0xEF;
 			printk("nuevo d: %x\n", d);
 			outb(ctrcD,d);
 			outb(ctrcA,0x09);
-			d = inb(ctrcD);
+			unsigned d = inb(ctrcD);
 			printk("d: %x\n", d);
 			d = d & 0xBF;
 			printk("nuevo d: %x\n", d);
