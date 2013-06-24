@@ -47,7 +47,7 @@ mt_getline(char *buf, unsigned size)
 				case 25:
 					printk("flecha para abajo\n");
 					mt_kbd_getPrevCommand(buf);
-					printk("%d\n",getCurrent());
+					printk("%d\n",getLast());
 					break;
 				default:
 					*p++ = c;

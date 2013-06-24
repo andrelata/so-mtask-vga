@@ -97,6 +97,7 @@ shell_main(int argc, char **argv)
 	}
 }
 
+char *
 mt_shell_autoComplete(char* buf){
 	
 }

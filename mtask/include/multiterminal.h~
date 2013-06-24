@@ -44,7 +44,7 @@ typedef struct tty{
 		char commandList[COM_NUM][COM_SIZE];
 		unsigned last;
 		unsigned current;
-	}commands;
+	}commands
 
 	//shellLine_t * lineBuffer;   //contiene informaciónion de la linea donde se escriben los comandos
  } tty_t;

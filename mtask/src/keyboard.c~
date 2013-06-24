@@ -480,5 +480,18 @@ mt_kbd_layouts(void)
 	return names;
 }
 
+void 
+mt_kbd_insertCommand(char* buf){
+	
+}
 
+void 
+mt_kbd_getNextCommand(char* buf){
+
+}
+
+void 
+mt_kbd_getPrevCommand(char* buf){
+
+}
 

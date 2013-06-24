@@ -339,21 +339,11 @@ mt_kbd_insertCommand(char* buf){
 
 void 
 mt_kbd_getNextCommand(char* buf){
-	
+	return multiterminal.terminales[CurrentTty()].commands.last;
 }
 
 void 
 mt_kbd_getPrevCommand(char* buf){
-	
-}
-
-unsigned
-getLast(){
-	return multiterminal.terminales[CurrentTty()].commands.last;
-}
-
-unsigned
-getCurrent(){
 	return multiterminal.terminales[CurrentTty()].commands.current;
 }
 

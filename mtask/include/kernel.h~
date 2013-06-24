@@ -170,6 +170,6 @@ void mt_shell_autoComplete(char* buf);
 /*borrar*/
 
 unsigned getLast();
-unsigned getCurrent();
+
 
 #endif
