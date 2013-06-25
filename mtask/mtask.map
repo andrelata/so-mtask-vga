@@ -184,7 +184,7 @@ LOAD obj/multiterminal.o
  *(.iplt)
  .iplt          0x0000000000000000        0x0 obj/kstart.o
 
-.text           0x0000000000100100     0x9ab3
+.text           0x0000000000100100     0x9a8e
  *(.text.unlikely .text.*_unlikely)
  *(.text.exit .text.exit.*)
  *(.text.startup .text.startup.*)
@@ -431,7 +431,7 @@ LOAD obj/multiterminal.o
  .text          0x00000000001089fc       0xf5 obj/divz.o
                 0x0000000000108a3a                divz_main
  *fill*         0x0000000000108af1        0x3 90909090
- .text          0x0000000000108af4     0x10bf obj/multiterminal.o
+ .text          0x0000000000108af4     0x109a obj/multiterminal.o
                 0x0000000000108af4                mt_mtty_init
                 0x0000000000108cc5                mt_mtty_splitScreen
                 0x0000000000108e9c                changeTty
@@ -468,124 +468,124 @@ LOAD obj/multiterminal.o
                 0x0000000000109828                getLast
                 0x0000000000109843                getCurrent
                 0x000000000010985e                mt_mtty_insertCommand
-                0x0000000000109a1a                mt_mtty_getNextCommand
-                0x0000000000109aad                mt_mtty_getPrevCommand
-                0x0000000000109b45                mt_mtty_getCommand
-                0x0000000000109b8d                mt_mtty_cleanLine
+                0x00000000001099f5                mt_mtty_getNextCommand
+                0x0000000000109a88                mt_mtty_getPrevCommand
+                0x0000000000109b20                mt_mtty_getCommand
+                0x0000000000109b68                mt_mtty_cleanLine
  *(.gnu.warning)
 
 .fini
  *(.fini)
-                0x0000000000109bb3                PROVIDE (__etext, .)
-                0x0000000000109bb3                PROVIDE (_etext, .)
-                0x0000000000109bb3                PROVIDE (etext, .)
+                0x0000000000109b8e                PROVIDE (__etext, .)
+                0x0000000000109b8e                PROVIDE (_etext, .)
+                0x0000000000109b8e                PROVIDE (etext, .)
 
-.rodata         0x0000000000109bb8      0xa1e
+.rodata         0x0000000000109b90      0xa1e
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x0000000000109bb8       0xf0 obj/kernel.o
- .rodata        0x0000000000109ca8       0x55 obj/irq.o
- *fill*         0x0000000000109cfd        0x3 00
- .rodata        0x0000000000109d00      0x188 obj/sprintf.o
- .rodata        0x0000000000109e88       0x29 obj/mutex.o
- *fill*         0x0000000000109eb1        0x3 00
- .rodata        0x0000000000109eb4       0xff obj/monitor.o
- .rodata        0x0000000000109fb3        0xe obj/pipe.o
- *fill*         0x0000000000109fc1        0x3 00
- .rodata        0x0000000000109fc4       0x2f obj/msgqueue.o
- *fill*         0x0000000000109ff3        0x1 00
- .rodata        0x0000000000109ff4       0x4e obj/filo.o
- *fill*         0x000000000010a042        0x2 00
- .rodata        0x000000000010a044       0x4e obj/sfilo.o
- *fill*         0x000000000010a092        0x2 00
- .rodata        0x000000000010a094       0x4e obj/xfilo.o
- .rodata        0x000000000010a0e2       0x24 obj/keyboard.o
- *fill*         0x000000000010a106        0x2 00
- .rodata        0x000000000010a108       0x58 obj/getline.o
- .rodata        0x000000000010a160       0xc9 obj/shell.o
- .rodata        0x000000000010a229        0x1 obj/split.o
- *fill*         0x000000000010a22a        0x2 00
- .rodata        0x000000000010a22c       0x62 obj/setkb.o
- *fill*         0x000000000010a28e        0x2 00
- .rodata        0x000000000010a290       0x88 obj/camino.o
- .rodata        0x000000000010a318       0xa0 obj/camino_ns.o
- .rodata        0x000000000010a3b8      0x116 obj/prodcons.o
- *fill*         0x000000000010a4ce        0x2 00
- .rodata        0x000000000010a4d0       0x4e obj/afilo.o
- *fill*         0x000000000010a51e        0x2 00
- .rodata        0x000000000010a520       0x6b obj/divz.o
- .rodata        0x000000000010a58b       0x4b obj/multiterminal.o
+ .rodata        0x0000000000109b90       0xf0 obj/kernel.o
+ .rodata        0x0000000000109c80       0x55 obj/irq.o
+ *fill*         0x0000000000109cd5        0x3 00
+ .rodata        0x0000000000109cd8      0x188 obj/sprintf.o
+ .rodata        0x0000000000109e60       0x29 obj/mutex.o
+ *fill*         0x0000000000109e89        0x3 00
+ .rodata        0x0000000000109e8c       0xff obj/monitor.o
+ .rodata        0x0000000000109f8b        0xe obj/pipe.o
+ *fill*         0x0000000000109f99        0x3 00
+ .rodata        0x0000000000109f9c       0x2f obj/msgqueue.o
+ *fill*         0x0000000000109fcb        0x1 00
+ .rodata        0x0000000000109fcc       0x4e obj/filo.o
+ *fill*         0x000000000010a01a        0x2 00
+ .rodata        0x000000000010a01c       0x4e obj/sfilo.o
+ *fill*         0x000000000010a06a        0x2 00
+ .rodata        0x000000000010a06c       0x4e obj/xfilo.o
+ .rodata        0x000000000010a0ba       0x24 obj/keyboard.o
+ *fill*         0x000000000010a0de        0x2 00
+ .rodata        0x000000000010a0e0       0x58 obj/getline.o
+ .rodata        0x000000000010a138       0xc9 obj/shell.o
+ .rodata        0x000000000010a201        0x1 obj/split.o
+ *fill*         0x000000000010a202        0x2 00
+ .rodata        0x000000000010a204       0x62 obj/setkb.o
+ *fill*         0x000000000010a266        0x2 00
+ .rodata        0x000000000010a268       0x88 obj/camino.o
+ .rodata        0x000000000010a2f0       0xa0 obj/camino_ns.o
+ .rodata        0x000000000010a390      0x116 obj/prodcons.o
+ *fill*         0x000000000010a4a6        0x2 00
+ .rodata        0x000000000010a4a8       0x4e obj/afilo.o
+ *fill*         0x000000000010a4f6        0x2 00
+ .rodata        0x000000000010a4f8       0x6b obj/divz.o
+ .rodata        0x000000000010a563       0x4b obj/multiterminal.o
 
 .rodata1
  *(.rodata1)
 
-.eh_frame_hdr   0x000000000010a5d8      0xa44
+.eh_frame_hdr   0x000000000010a5b0      0xa44
  *(.eh_frame_hdr)
- .eh_frame_hdr  0x000000000010a5d8      0xa44 obj/kernel.o
+ .eh_frame_hdr  0x000000000010a5b0      0xa44 obj/kernel.o
 
-.eh_frame       0x000000000010b01c     0x29d0
+.eh_frame       0x000000000010aff4     0x29d0
  *(.eh_frame)
- .eh_frame      0x000000000010b01c      0x5cc obj/kernel.o
- .eh_frame      0x000000000010b5e8       0x60 obj/gdt_idt.o
+ .eh_frame      0x000000000010aff4      0x5cc obj/kernel.o
+ .eh_frame      0x000000000010b5c0       0x60 obj/gdt_idt.o
                                          0x78 (size before relaxing)
- .eh_frame      0x000000000010b648      0x148 obj/irq.o
+ .eh_frame      0x000000000010b620      0x148 obj/irq.o
                                         0x160 (size before relaxing)
- .eh_frame      0x000000000010b790      0x264 obj/string.o
+ .eh_frame      0x000000000010b768      0x264 obj/string.o
                                         0x27c (size before relaxing)
- .eh_frame      0x000000000010b9f4      0x1d8 obj/sprintf.o
+ .eh_frame      0x000000000010b9cc      0x1d8 obj/sprintf.o
                                         0x1f0 (size before relaxing)
- .eh_frame      0x000000000010bbcc       0x60 obj/malloc.o
+ .eh_frame      0x000000000010bba4       0x60 obj/malloc.o
                                          0x78 (size before relaxing)
- .eh_frame      0x000000000010bc2c      0x2a0 obj/cons.o
+ .eh_frame      0x000000000010bc04      0x2a0 obj/cons.o
                                         0x2b8 (size before relaxing)
- .eh_frame      0x000000000010becc       0x20 obj/timer.o
+ .eh_frame      0x000000000010bea4       0x20 obj/timer.o
                                          0x38 (size before relaxing)
- .eh_frame      0x000000000010beec      0x100 obj/queue.o
+ .eh_frame      0x000000000010bec4      0x100 obj/queue.o
                                         0x118 (size before relaxing)
- .eh_frame      0x000000000010bfec       0x44 obj/math.o
+ .eh_frame      0x000000000010bfc4       0x44 obj/math.o
                                          0x5c (size before relaxing)
- .eh_frame      0x000000000010c030      0x100 obj/sem.o
+ .eh_frame      0x000000000010c008      0x100 obj/sem.o
                                         0x118 (size before relaxing)
- .eh_frame      0x000000000010c130       0xc0 obj/mutex.o
+ .eh_frame      0x000000000010c108       0xc0 obj/mutex.o
                                          0xd8 (size before relaxing)
- .eh_frame      0x000000000010c1f0      0x180 obj/monitor.o
+ .eh_frame      0x000000000010c1c8      0x180 obj/monitor.o
                                         0x198 (size before relaxing)
- .eh_frame      0x000000000010c370      0x120 obj/pipe.o
+ .eh_frame      0x000000000010c348      0x120 obj/pipe.o
                                         0x138 (size before relaxing)
- .eh_frame      0x000000000010c490      0x160 obj/msgqueue.o
+ .eh_frame      0x000000000010c468      0x160 obj/msgqueue.o
                                         0x178 (size before relaxing)
- .eh_frame      0x000000000010c5f0       0x60 obj/rand.o
+ .eh_frame      0x000000000010c5c8       0x60 obj/rand.o
                                          0x78 (size before relaxing)
- .eh_frame      0x000000000010c650      0x184 obj/filo.o
+ .eh_frame      0x000000000010c628      0x184 obj/filo.o
                                         0x19c (size before relaxing)
- .eh_frame      0x000000000010c7d4      0x164 obj/sfilo.o
+ .eh_frame      0x000000000010c7ac      0x164 obj/sfilo.o
                                         0x17c (size before relaxing)
- .eh_frame      0x000000000010c938      0x184 obj/xfilo.o
+ .eh_frame      0x000000000010c910      0x184 obj/xfilo.o
                                         0x19c (size before relaxing)
- .eh_frame      0x000000000010cabc      0x15c obj/keyboard.o
+ .eh_frame      0x000000000010ca94      0x15c obj/keyboard.o
                                         0x174 (size before relaxing)
- .eh_frame      0x000000000010cc18       0x60 obj/printk.o
+ .eh_frame      0x000000000010cbf0       0x60 obj/printk.o
                                          0x78 (size before relaxing)
- .eh_frame      0x000000000010cc78       0x20 obj/getline.o
+ .eh_frame      0x000000000010cc50       0x20 obj/getline.o
                                          0x38 (size before relaxing)
- .eh_frame      0x000000000010cc98       0x44 obj/shell.o
+ .eh_frame      0x000000000010cc70       0x44 obj/shell.o
                                          0x5c (size before relaxing)
- .eh_frame      0x000000000010ccdc       0xc0 obj/split.o
+ .eh_frame      0x000000000010ccb4       0xc0 obj/split.o
                                          0xd8 (size before relaxing)
- .eh_frame      0x000000000010cd9c       0x20 obj/setkb.o
+ .eh_frame      0x000000000010cd74       0x20 obj/setkb.o
                                          0x38 (size before relaxing)
- .eh_frame      0x000000000010cdbc      0x1fc obj/camino.o
+ .eh_frame      0x000000000010cd94      0x1fc obj/camino.o
                                         0x214 (size before relaxing)
- .eh_frame      0x000000000010cfb8      0x1bc obj/camino_ns.o
+ .eh_frame      0x000000000010cf90      0x1bc obj/camino_ns.o
                                         0x1d4 (size before relaxing)
- .eh_frame      0x000000000010d174       0x24 obj/atoi.o
+ .eh_frame      0x000000000010d14c       0x24 obj/atoi.o
                                          0x3c (size before relaxing)
- .eh_frame      0x000000000010d198      0x114 obj/prodcons.o
+ .eh_frame      0x000000000010d170      0x114 obj/prodcons.o
                                         0x12c (size before relaxing)
- .eh_frame      0x000000000010d2ac      0x184 obj/afilo.o
+ .eh_frame      0x000000000010d284      0x184 obj/afilo.o
                                         0x19c (size before relaxing)
- .eh_frame      0x000000000010d430       0x60 obj/divz.o
+ .eh_frame      0x000000000010d408       0x60 obj/divz.o
                                          0x78 (size before relaxing)
- .eh_frame      0x000000000010d490      0x55c obj/multiterminal.o
+ .eh_frame      0x000000000010d468      0x55c obj/multiterminal.o
                                         0x574 (size before relaxing)
 
 .gcc_except_table
@@ -593,7 +593,7 @@ LOAD obj/multiterminal.o
 
 .exception_ranges
  *(.exception_ranges .exception_ranges*)
-                0x000000000010d9ec                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
+                0x000000000010d9c4                . = (ALIGN (0x1000) - ((0x1000 - .) & 0xfff))
                 0x000000000010eff4                . = DATA_SEGMENT_ALIGN (0x1000, 0x1000)
 
 .eh_frame

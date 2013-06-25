@@ -334,6 +334,8 @@ mt_mtty_insertCommand(char* buf){
 	int i,j;
 	if(last == COM_NUM){
 		for(i=0; i < last-1; i++){
+			printk("i:%d\n",i);
+			printk("j:%d\n",j);
 			strcpy(multiterminal.terminales[CurrentTty()].commands.commandList[i], 
 				multiterminal.terminales[CurrentTty()].commands.commandList[i+1]);
 			}

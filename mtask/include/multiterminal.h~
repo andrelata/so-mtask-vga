@@ -17,7 +17,7 @@
 #define CRT_CURSOR_HIGH 0x0E
 #define CRT_CURSOR_LOW 0x0F
 
-#define COM_NUM 5
+#define COM_NUM 15
 #define COM_SIZE 30
 
 #define DEFATTR ((BLACK << 12) | (LIGHTGRAY << 8))
