@@ -101,10 +101,14 @@ void
 mt_shell_autoComplete(char* buf){
 	
 	struct cmdentry *cp;
+//	char *args[NARGS+1];
+//	unsigned nargs;
 
 	int size = strlen(buf);
 	int foundC = 0;
 	
+//	nargs = separate(buf, args, NARGS);
+//	args[nargs] = NULL;
 	/* aplicaciones */
 	for(cp = cmdtab ; cp->name; cp++){
 		printk("buf:%s\n", buf);
