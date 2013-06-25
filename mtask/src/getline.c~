@@ -37,17 +37,17 @@ mt_getline(char *buf, unsigned size)
 					mt_cons_puts("\r\n");
 					*p++ = '\n';
 					*p = 0;
-					mt_mtty_insertCommand(buf);
+					mt_kbd_insertCommand(buf);
 					return p - buf;
 				case 24:
 					//printk("flecha para arriba\n");
-					mt_mtty_getNextCommand(buf);
+					mt_kbd_getNextCommand(buf);
 					//printk("%d\n",getCurrent());
 					//printk("trae:%s", buf);
 					break;
 				case 25:
 					//printk("flecha para abajo\n");
-					mt_mtty_getPrevCommand(buf);
+					mt_kbd_getPrevCommand(buf);
 					//printk("%d\n",getCurrent());
 					//printk("trae:%s", buf);
 					break;

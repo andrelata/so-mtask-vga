@@ -480,5 +480,28 @@ mt_kbd_layouts(void)
 	return names;
 }
 
+void
+mt_kdb_getCommand(char* buf)
+{
+	unsigned ch;
+	int i=0;
+	int size = strlen(buf);
 
+	for(i; i<size-1; i++){
+		ch = buf[i];
+		putIntottyKbd(&ch);
+	}
+}
+
+void
+mt_kdb_cleanLine(int size)
+{
+	unsigned ch;
+
+	while(size!=0){
+		ch = 8;
+		putIntottyKbd(&ch);
+		size--;
+	}
+}
 

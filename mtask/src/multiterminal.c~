@@ -370,7 +370,7 @@ mt_mtty_getNextCommand(char* buf){
 		multiterminal.terminales[CurrentTty()].commands.current = current;
 		
 	}
-	//printk("arriba:%d\n",current);
+	printk("arriba:%d\n",current);
 	strcpy(buf, multiterminal.terminales[CurrentTty()].commands.commandList[current]);
 	mt_mtty_getCommand(buf);
 

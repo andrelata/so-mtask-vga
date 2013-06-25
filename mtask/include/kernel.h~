@@ -159,11 +159,11 @@ void mt_setup_math(void);
 
 void mt_mtty_init(void);
 void mt_mtty_splitScreen(void);
-void mt_mtty_insertCommand(char* buf);
-void mt_mtty_getNextCommand(char* buf);
-void mt_mtty_getPrevCommand(char* buf);
-void mt_mtty_getCommand(char* buf);
-void mt_mtty_cleanLine(int size);
+void mt_kbd_insertCommand(char* buf);
+void mt_kbd_getNextCommand(char* buf);
+void mt_kbd_getPrevCommand(char* buf);
+void mt_kdb_getCommand(char* buf);
+void mt_kdb_cleanLine(int size);
 
 
 /* shell.c */
