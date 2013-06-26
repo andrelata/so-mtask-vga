@@ -58,7 +58,7 @@ mt_getline(char *buf, unsigned size)
 					//printk("p:%s\n", p);
 					//printk("p-buf:%s\n", p-buf);
 					len = mt_shell_autoComplete(buf,p-buf); // chequear si es p o p-buf
-					p += len;
+					p+ = len;
 					//printk("trae:%s\n", buf);
 					break;
 				default:

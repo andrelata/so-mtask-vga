@@ -22,7 +22,7 @@
 
 #define DEFATTR ((BLACK << 12) | (LIGHTGRAY << 8))
 
-#define KBDBUFSIZE	360
+#define KBDBUFSIZE	32
 
 typedef unsigned short row[NUMCOLS];
 

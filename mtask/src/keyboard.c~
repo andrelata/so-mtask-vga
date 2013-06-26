@@ -429,7 +429,7 @@ mt_kbd_getch_timed(unsigned *c, unsigned timeout)
 {
 	*c = 0;
 	//return GetMsgQueueTimed(key_mq, c, timeout);
-	return mt_mtty_getFromKbdTimed(c, timeout);
+	return getFromttyKbdTimed(c, timeout);
 }
 
 bool 

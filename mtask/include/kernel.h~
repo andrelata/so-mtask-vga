@@ -168,7 +168,7 @@ void mt_mtty_cleanLine(int size);
 
 /* shell.c */
 
-unsigned mt_shell_autoComplete(char* buf, unsigned size);
+void mt_shell_autoComplete(char* buf);
 
 
 

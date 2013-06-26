@@ -33,7 +33,7 @@ put(unsigned char ch)
 	unsigned cur_attr = getCur_attr(), cur_x = getCur_x(), cur_y = getCur_y();
 	vidmem[cur_y][cur_x] = (ch & 0xFF) | cur_attr;
 	incCur_x();
-	if (cur_x+1 >= NUMCOLS)
+	if (cur_x >= NUMCOLS)
 	{
 		setCur_x(0);
 		if (cur_y >= NUMROWS + getOffset() - 1)

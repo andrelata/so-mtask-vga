@@ -98,34 +98,60 @@ shell_main(int argc, char **argv)
 	}
 }
 
-unsigned
-mt_shell_autoComplete(char* buf, unsigned size){
+void
+mt_shell_autoComplete(char* buf){
 	
-	unsigned i,j,lenght, eq=1;
-	lenght = size;
-	char * commName;
 	struct cmdentry *cp;
-	
-	if(lenght == 0){
-		return 0;
-	}
+	char *args[NARGS+1];
+	unsigned nargs;
 
-	for (cp = cmdtab ; cp->name ; cp++) {
-	    commName=cp->name;
-	    for(j=0; j<lenght && eq==1;j++){
-		if(buf[j]!=commName[j])
-		  eq=0;
-		if(j==strlen(commName)-1)
-		  eq=0;
-	    }
-	    if(eq==1){
-		lenght=strlen(commName);
-		for(; j<lenght ; j++){
-			buf[j] = commName[j];
-			mt_cons_putc(commName[j]);
+	unsigned size = strlen(buf);
+	int foundC = 0;
+
+	//printk("size:%d\n",size);
+	//printk("buf:%s\n",buf);
+	//args[0]=NULL;
+	nargs = separate(buf, args, NARGS);
+	//printk("args:%s\n",args[0]);
+	//printk("nargs:%d\n",nargs);
+	if ( nargs != 0 ){
+		args[nargs] = NULL;
+
+		//printk("%d",strncmp(args[0], "help", size-1));
+		/* comandos internos */
+		if ( strncmp(args[0], "help", size-1) == 0 )
+		{
+			//printk("entra\n");
+			mt_mtty_cleanLine(size);
+			//printk("bufA:%s\n",args[0]);
+			strcpy(buf, "help\n");
+			//printk("bufD:%s\n",args[0]);
+			mt_mtty_getCommand(buf);
+			return;
 		}
-	    }
-	    eq=!eq;
+		/*if ( strncmp(args[0], "exit", size-1) == 0 )
+		{
+			mt_mtty_cleanLine(size);
+			strcpy(args[0], "exit\n");
+			mt_mtty_getCommand(args[0]);
+			return;
+		}
+		if ( strncmp(args[0], "clear", size-1) == 0 )
+		{
+			mt_mtty_cleanLine(size);
+			strcpy(args[0], "clear\n");
+			mt_mtty_getCommand(args[0]);
+			return;
+		}
+
+		if ( strncmp(args[0], "reboot", size-1) == 0 )
+		{
+			mt_mtty_cleanLine(size);
+			strcpy(args[0], "reboot\n");
+			mt_mtty_getCommand(args[0]);
+			return;
+		}*/
+
 	}
-	return lenght - size;
+	
 }
