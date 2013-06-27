@@ -399,7 +399,7 @@ mt_mtty_getPrevCommand(char* buf){
 	//borra la linea
 	mt_mtty_cleanLine(strlen(buf));
 
-	if(current < last-1){
+	if(current <= last-1){
 		current++;
 		multiterminal.terminales[CurrentTty()].commands.current = current;
 		strcpy(buf, multiterminal.terminales[CurrentTty()].commands.commandList[current]);

@@ -39,7 +39,7 @@ shell_main(int argc, char **argv)
 	{
 		mt_cons_setattr(LIGHTGRAY, BLACK);
 		//****aca habria que cambiar el nombre de la terminal*/
-		cprintk(LIGHTCYAN, BLACK, "MT%d> ", CurrentTty()+1);
+		cprintk(LIGHTCYAN, BLACK, "MT%d> ", CurrentTty());
 
 		/* leer linea de comando, fraccionarla en tokens y armar argv */
 		mt_getline(buf, sizeof buf);
